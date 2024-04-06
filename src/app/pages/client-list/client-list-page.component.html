@@ -1,0 +1,40 @@
+<h4>Home de Clientes</h4>
+
+<p>Listagem de clientes cadastrados</p>
+<ul *ngFor="let cliente of clientes">
+    <li>{{cliente.id}} - {{cliente.nome}} - {{cliente.descricao}}</li>
+    <li>
+        <a [routerLink]="['/client/details', cliente.id]">Ver detalhes clientes</a>
+    </li>
+</ul>
+
+<div *ngIf="premiumClient; else naoPremium">
+    <p>Você é um cliente premium! Parabéns!</p>
+</div>  
+@if(premiumClient) {
+    <div>
+        <p>Cliente premium tem sorteios de prêmios!</p>
+    </div> 
+}
+<ng-template #naoPremium>
+    <p>Torne-se um cliente PREMIUM!</p>
+</ng-template>
+
+<h4>Cadastro de cliente novo cliente na lista</h4>
+<label>Nome: </label>
+<input [(ngModel)]="client.nome" />
+<br/>
+<label>Descrição: </label>
+<input [(ngModel)]="client.descricao" />
+<br/>
+<label>ID: </label>
+<input [(ngModel)]="client.id" />
+<br/>
+<button (click)="adicionar()">Adicionar cliente</button>
+
+<router-outlet></router-outlet>
+
+<br/>
+<br/>
+<a routerLink="">Voltar para Home</a>
+<br>

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,9 +6,9 @@ import { ActivatedRoute } from '@angular/router';
     templateUrl: './client-details-page.component.html',
     styleUrl: './client-details-page.component.css'
 })
-export class ClientDetailsPage {
+export class ClientDetailsPage implements OnInit {
     constructor(
-        private route: ActivatedRoute
+        private activeRoute: ActivatedRoute
     ) {}
 
     client: {
@@ -22,7 +22,12 @@ export class ClientDetailsPage {
     }
 
     ngOnInit() {
-        let id = this.route.snapshot.paramMap.get('id')!;
-        this.client.id = +id;
+        this.activeRoute.params.subscribe(routeParams => {
+            this.loadDetail(+routeParams['id']);
+        });
+    }
+
+    loadDetail(id: number) {
+        this.client.id = id;
     }
 }

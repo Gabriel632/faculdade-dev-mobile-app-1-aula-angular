@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ClientService } from "../../services/client.service";
 
 @Component({
     selector: 'app-client-list',
@@ -6,6 +7,11 @@ import { Component } from "@angular/core";
     styleUrl: './client-list-page.component.css'
 })
 export class ClientListPage {
+
+    constructor(private clientService: ClientService) {
+
+    }
+
     premiumClient = false;
 
     clientes = [
@@ -39,5 +45,9 @@ export class ClientListPage {
                 id: this.client.id
             }
         )
+    }
+
+    sayHello() {
+        alert(this.clientService.sayHello());
     }
 }

@@ -1,0 +1,12 @@
+.alert {
+    width: 200px;
+    height: 100px;
+    border: 1px solid slateblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sucess {
+    background-color: bisque;
+}

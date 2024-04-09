@@ -1,0 +1,18 @@
+<h4>Binding Page</h4>
+
+<img [src]="imagem" aria-details="imagem Binding" title="imagem Binding" [style]="{width: width}"/>
+
+<div class="alert" [class]="{sucess: sucesso}">Alerta</div>
+<button (click)="enviarDados()">Enviar dados</button>
+
+<br/>
+
+<h4>Exemplo de Pipe</h4>
+
+<p>Data: {{data | date}}</p>
+<p>Data 2: {{data | date:"shortDate"}}</p>
+<p>Currency: {{dinheiro | currency}}</p>
+<p>Dinheiro: {{dinheiro | currency:"BRL"}}</p>
+
+<p>Pipe personalizado: {{nome | appuppercase}}</p>
+

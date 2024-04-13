@@ -7,6 +7,7 @@ import { FormsModule } from "@angular/forms";
 import { ClientDetailsPage } from "../../pages/client-details/client-details-page.component";
 import { BindingPage } from "../../pages/binding/binding-page.component";
 import { CustomUpperCasePipe } from "../pipes/custom-uppercase-pipe";
+import { LoginPage } from "../../pages/login/login-page.component";
 
 // acredito que o conceito de módulos está sendo depreciado no angular padrão por ser usado somente em projetos realmente muito grandes
 @NgModule({
@@ -14,7 +15,8 @@ import { CustomUpperCasePipe } from "../pipes/custom-uppercase-pipe";
         HeaderComponent, 
         ClientListPage, 
         ClientDetailsPage,
-        BindingPage        
+        BindingPage,
+        LoginPage        
     ],
     imports: [
         RouterModule
@@ -33,6 +35,7 @@ import { CustomUpperCasePipe } from "../pipes/custom-uppercase-pipe";
         ,RouterModule
         ,RouterOutlet
         ,BindingPage
+        ,LoginPage
     ]
 })  
 export class ComponentModule {

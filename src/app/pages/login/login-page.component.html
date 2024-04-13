@@ -1,0 +1,11 @@
+<hr/>
+
+<h4>Página de Login</h4>
+
+<div *ngIf="getStorage('logado') === 'false'">
+    <button (click)="logar()">Logar</button>
+</div>
+
+<div *ngIf="getStorage('logado') === 'true'">
+    <button (click)="deslogar()">Deslogar</button>
+</div>

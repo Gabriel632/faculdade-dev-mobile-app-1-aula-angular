@@ -4,11 +4,13 @@ import { ClientDetailsPage } from './pages/client-details/client-details-page.co
 import { BindingPage } from './pages/binding/binding-page.component';
 import { ClientGuard } from './guards/client.guard';
 import { LoginPage } from './pages/login/login-page.component';
+import { RxJsPage } from './pages/rxjs/rxjs-page.component';
 
 export const routes: Routes = [
     {path: 'client', component: ClientListPage, canActivate: [ClientGuard], children: [
         {path: 'details/:id', component: ClientDetailsPage}
     ]},
     {path: 'binding', component: BindingPage},
-    {path: 'login', component: LoginPage}
+    {path: 'login', component: LoginPage},
+    {path: 'rxjs', component: RxJsPage}
 ];

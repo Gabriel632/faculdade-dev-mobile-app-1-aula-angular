@@ -1,0 +1,28 @@
+<hr/>
+
+<h4>RxJs Page</h4>
+<h4>Exemplos</h4>
+
+<p>Observable</p>
+<ul>
+    <li *ngFor="let item of items">{{item}}</li>
+</ul>
+
+<p>Subject</p>
+<button (click)="emitirEvento()">Emitir evento</button>
+<p>
+    Ultimo evento: {{ultimoEvento}}
+</p>
+
+<p>Observable2</p>
+<button (click)="desativarSubscription()">Desativar Subscription</button>
+<ul>
+    <li *ngFor="let item of items2">{{item}}</li>
+</ul>
+
+<p>Observable3</p>
+<button (click)="desativarSubscription()">Desativar Subscription</button>
+<ul>
+    <li *ngFor="let item of items3">{{item}}</li>
+</ul>
+

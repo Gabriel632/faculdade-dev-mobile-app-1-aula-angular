@@ -9,8 +9,9 @@ import { BindingPage } from "../../pages/binding/binding-page.component";
 import { CustomUpperCasePipe } from "../pipes/custom-uppercase-pipe";
 import { LoginPage } from "../../pages/login/login-page.component";
 import { RxJsPage } from "../../pages/rxjs/rxjs-page.component";
+import { PessoaListPage } from "../../pages/pessoa-list/pessoa-list-page.component";
+import { PessoaService } from "../../services/pessoa.service";
 
-// acredito que o conceito de módulos está sendo depreciado no angular padrão por ser usado somente em projetos realmente muito grandes
 @NgModule({
     declarations: [
         HeaderComponent, 
@@ -18,7 +19,11 @@ import { RxJsPage } from "../../pages/rxjs/rxjs-page.component";
         ClientDetailsPage,
         BindingPage,
         LoginPage,
-        RxJsPage
+        RxJsPage,
+        PessoaListPage
+    ],
+    providers: [
+        PessoaService
     ],
     imports: [
         RouterModule
@@ -28,7 +33,7 @@ import { RxJsPage } from "../../pages/rxjs/rxjs-page.component";
         ,FormsModule
         ,DatePipe
         ,CurrencyPipe    
-        ,CustomUpperCasePipe    
+        ,CustomUpperCasePipe
     ],
     exports: [
         HeaderComponent 
@@ -39,6 +44,7 @@ import { RxJsPage } from "../../pages/rxjs/rxjs-page.component";
         ,BindingPage
         ,LoginPage
         ,RxJsPage
+        ,PessoaListPage
     ]
 })  
 export class ComponentModule {

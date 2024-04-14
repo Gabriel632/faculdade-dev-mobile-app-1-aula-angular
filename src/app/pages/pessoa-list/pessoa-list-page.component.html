@@ -1,0 +1,12 @@
+<h4>Home de Pessoas</h4>
+
+<div>
+    <button (click)="listar()">Listar</button>
+</div>
+
+<ul>
+    <li *ngFor="let pessoa of pessoas">
+        Nome: {{pessoa.nome}}
+        Idade: {{pessoa.idade}}
+    </li>
+</ul>

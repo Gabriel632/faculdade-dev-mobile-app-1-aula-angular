@@ -1,0 +1,40 @@
+<h4>Cadastrar Pessoa</h4>
+
+<form (ngSubmit)="salvar()">
+    <table cellspacing="0">
+        <tbody>
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-label>Nome</mat-label>
+                        <input matInput required placeholder="Ex. João" name="nome" [(ngModel)]="pessoa.nome">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>E-mail</mat-label>
+                        <input matInput placeholder="Ex. joaao@gmail.com">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>Idade</mat-label>
+                        <input matInput type="number" placeholder="Ex. 30" name="idade" [(ngModel)]="pessoa.idade">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>Hobbie</mat-label>
+                        <mat-select>
+                            <mat-option value="cavalgar">Cavalgar</mat-option>
+                            <mat-option value="tenis">Esporte Tênis</mat-option>
+                            <mat-option value="carros">Carros</mat-option>
+                            <mat-option value="videoGame">Video Game</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr> 
+        </tbody>               
+    </table>
+    <button mat-raised-button color="primary" type="submit">Salvar</button>
+</form>

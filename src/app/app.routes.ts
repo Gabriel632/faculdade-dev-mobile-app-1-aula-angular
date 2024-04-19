@@ -6,6 +6,9 @@ import { ClientGuard } from './guards/client.guard';
 import { LoginPage } from './pages/login/login-page.component';
 import { RxJsPage } from './pages/rxjs/rxjs-page.component';
 import { PessoaListPage } from './pages/pessoa-list/pessoa-list-page.component';
+import { UserPage } from './pages/user/user-page.component';
+import { PessoaAddPage } from './pages/pessoa-add/pessoa-add-page.component';
+import { UserAddPage } from './pages/user-add/user-add.component';
 
 export const routes: Routes = [
     {path: 'client', component: ClientListPage, canActivate: [ClientGuard], children: [
@@ -14,5 +17,8 @@ export const routes: Routes = [
     {path: 'binding', component: BindingPage},
     {path: 'login', component: LoginPage},
     {path: 'rxjs', component: RxJsPage},
-    {path: 'pessoa', component: PessoaListPage}
+    {path: 'pessoa', component: PessoaListPage},
+    {path: 'pessoa/add', component: PessoaAddPage},
+    {path: 'user', component: UserPage},
+    {path: 'user/add', component: UserAddPage}
 ];

@@ -8,5 +8,6 @@
     <li *ngFor="let pessoa of pessoas">
         Nome: {{pessoa.nome}}
         Idade: {{pessoa.idade}}
+        <button (click)="salvar(pessoa)">Salvar</button>
     </li>
 </ul>

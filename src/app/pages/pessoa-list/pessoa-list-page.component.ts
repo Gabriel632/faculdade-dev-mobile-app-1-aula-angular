@@ -19,7 +19,8 @@ export class PessoaListPage {
     ngOnDestroy() {
     }
 
-    salvar() {
+    salvar(pessoa: Pessoa) {
+        this.service.salvar(pessoa);
     }
 
     listar() {

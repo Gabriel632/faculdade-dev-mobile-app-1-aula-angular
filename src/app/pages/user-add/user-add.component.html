@@ -1,0 +1,32 @@
+<h4>Cadastrar User</h4>
+
+<form [formGroup]="userForm" (ngSubmit)="salvar()">
+    <table cellspacing="0">
+        <tbody>
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-label>Nome</mat-label>
+                        <input matInput required placeholder="Ex. João" name="name" formControlName="name">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>E-mail</mat-label>
+                        <input matInput placeholder="Ex. joaao@gmail.com" name="email" formControlName="email">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>Genêro</mat-label>
+                        <mat-select name="gender" formControlName="gender">
+                            <mat-option value="masculino">Masculino</mat-option>
+                            <mat-option value="feminino">Feminino</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr> 
+        </tbody>               
+    </table>
+    <button mat-raised-button color="primary" type="submit">Salvar</button>
+</form>

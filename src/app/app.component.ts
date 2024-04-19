@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { ComponentModule } from './components/component.module/component.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterOutlet, 
     ComponentModule, 
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

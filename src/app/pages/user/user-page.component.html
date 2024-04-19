@@ -1,0 +1,32 @@
+<h4>Home de Users</h4>
+
+<button (click)="novoUser()">Criar novo user</button>
+<br/>
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>E-mail</td>
+            <td>Genêro</td>
+            <td>Status</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.status}}</td>
+            <td>
+                <button (click)="editar(user)">Editar</button>
+            </td>
+            <td>
+                <button (click)="deletar(user.id)">Deletar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

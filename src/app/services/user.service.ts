@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, of, tap } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { User } from "../model/user";
 
@@ -13,7 +13,12 @@ export class UserService {
         return this.http.get<User[]>(baseURL);
     }
 
-    postUser(user: User) {
+    getUsersLocalStorage(id: string): User {
+        const user = localStorage.getItem('user_' + id);
+        return JSON.parse(user ? user: "{}");
+    }
+
+    postUser(user: User): Observable<User> {
         this.http.post(baseURL, user)
         .subscribe(
             {
@@ -26,9 +31,14 @@ export class UserService {
                 }
             }
         );
+
+        return of(user)
+        .pipe(
+            tap((u) => localStorage.setItem('user_' + u.id, JSON.stringify(u)))
+        );        
     }
 
-    putUser(id: number, user: User) {
+    putUser(id: number, user: User): Observable<User> {
         this.http.put(`${baseURL}/${id}`, user)
         .subscribe(
             {
@@ -41,6 +51,11 @@ export class UserService {
                 }
             }
         );
+
+        return of(user)
+        .pipe(
+            tap((u) => localStorage.setItem('user_' + u.id, JSON.stringify(u)))
+        ); 
     }
 
     deleteUser(id: number) {

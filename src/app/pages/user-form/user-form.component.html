@@ -1,9 +1,24 @@
 <h4>Cadastrar User</h4>
 
+<div>
+    <p class="error" *ngIf="isError('email','required')">
+        E-mail é obrigatório
+    </p>
+    <p class="error" *ngIf="isError('email','email')">
+        E-mail é inválido
+    </p>
+</div>
+
 <form [formGroup]="userForm" (ngSubmit)="salvar()">
     <table cellspacing="0">
         <tbody>
             <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-label>ID</mat-label>
+                        <input matInput readonly type="number" placeholder="Ex. 1" name="id" formControlName="id">
+                    </mat-form-field>
+                </td>
                 <td>
                     <mat-form-field>
                         <mat-label>Nome</mat-label>
@@ -13,8 +28,8 @@
                 <td>
                     <mat-form-field>
                         <mat-label>E-mail</mat-label>
-                        <input matInput placeholder="Ex. joaao@gmail.com" name="email" formControlName="email">
-                    </mat-form-field>
+                        <input matInput placeholder="Ex. joaao@gmail.com" name="email" formControlName="email">                       
+                    </mat-form-field>                    
                 </td>
                 <td>
                     <mat-form-field>

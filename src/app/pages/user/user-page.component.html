@@ -25,7 +25,7 @@
                 <button (click)="editar(user)">Editar</button>
             </td>
             <td>
-                <button (click)="deletar(user.id)">Deletar</button>
+                <button (click)="deletar(user.id ? user.id: 0)">Deletar</button>
             </td>
         </tr>
     </tbody>

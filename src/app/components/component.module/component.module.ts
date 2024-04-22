@@ -3,7 +3,7 @@ import { HeaderComponent } from "../header.component/header.component";
 import { RouterModule, RouterOutlet } from "@angular/router";
 import { ClientListPage } from "../../pages/client-list/client-list-page.component";
 import { CurrencyPipe, DatePipe, NgFor, NgIf } from "@angular/common";
-import { FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ClientDetailsPage } from "../../pages/client-details/client-details-page.component";
 import { BindingPage } from "../../pages/binding/binding-page.component";
 import { CustomUpperCasePipe } from "../pipes/custom-uppercase-pipe";
@@ -18,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { PessoaAddPage } from "../../pages/pessoa-add/pessoa-add-page.component";
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { UserAddPage } from "../../pages/user-add/user-add.component";
+import { UserFormPage } from "../../pages/user-form/user-form.component";
 
 @NgModule({
     declarations: [
@@ -31,7 +31,7 @@ import { UserAddPage } from "../../pages/user-add/user-add.component";
         PessoaListPage,
         UserPage,
         PessoaAddPage,
-        UserAddPage
+        UserFormPage
     ],
     providers: [
         PessoaService,
@@ -64,7 +64,7 @@ import { UserAddPage } from "../../pages/user-add/user-add.component";
         ,PessoaListPage
         ,UserPage
         ,PessoaAddPage
-        ,UserAddPage
+        ,UserFormPage
     ]
 })  
 export class ComponentModule {

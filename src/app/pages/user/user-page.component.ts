@@ -20,7 +20,10 @@ export class UserPage {
     editar(user: User) {
         const editado = user;
         editado.name = editado.name + ' editado!';
-        this.service.putUser(editado.id, editado);
+        this.service.putUser(editado.id ? editado.id: 0, editado)
+        .subscribe((u) => 
+            console.log(`user ${u.name} editado com sucesso`)
+        );
     }
 
     novoUser(){
@@ -31,7 +34,10 @@ export class UserPage {
             gender: "male",
             status: "active"
         };
-        this.service.postUser(novoUser);
+        this.service.postUser(novoUser)
+        .subscribe((u) => 
+            console.log(`user ${u.name} salvo com sucesso`)
+        );
     }
 
     deletar(id: number){

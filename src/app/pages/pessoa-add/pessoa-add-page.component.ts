@@ -1,6 +1,4 @@
 import { Component } from "@angular/core";
-import { PessoaService } from "../../services/pessoa.service";
-import { Observable, Subscription, tap } from "rxjs";
 import { Pessoa } from "../../model/pessoa";
 
 @Component({
@@ -12,7 +10,8 @@ export class PessoaAddPage {
     pessoas: Pessoa[] = [];
     pessoa: Pessoa = {
         nome: "",
-        idade: 0
+        idade: 0,
+        cpf: ""
     };
 
     salvar() {

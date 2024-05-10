@@ -1,21 +1,23 @@
 <h4>Componente Header</h4>
 
+<p>Parâmetro vindo do componente pai app: {{descricao1}}</p>
+
 <div>
     <p>Menu básico aprendizado outras funcs.</p>
     <p> 
-        <a routerLink="">Home</a>
+        <a routerLink="" (click)="clickEmItem('está na página Home')">Home</a>
         ----    
-        <a routerLink="/login">Ir para login</a>
+        <a routerLink="/login" (click)="clickEmItem('está na página Login')">Ir para login</a>
         ----    
-        <a routerLink="/client">Ir para cliente</a>
+        <a routerLink="/client" (click)="clickEmItem('está na página Cliente')">Ir para cliente</a>
         ----    
-        <a routerLink="/binding">Ir para binding</a>
+        <a routerLink="/binding" (click)="clickEmItem('está na página Binding')">Ir para binding</a>
         ----    
-        <a routerLink="/rxjs">Ir para rxjs</a>
+        <a routerLink="/rxjs" (click)="clickEmItem('está na página RXJS')">Ir para rxjs</a>
         ----    
-        <a routerLink="/pessoa">Ir para pessoa</a>
+        <a routerLink="/pessoa" (click)="clickEmItem('está na página Pessoa')">Ir para pessoa</a>
         ----    
-        <a routerLink="/user">Ir para user</a>
+        <a routerLink="/user" (click)="clickEmItem('está na página User')">Ir para user</a>
     </p>
 </div>
 

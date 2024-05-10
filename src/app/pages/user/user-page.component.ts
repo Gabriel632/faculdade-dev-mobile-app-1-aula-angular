@@ -32,7 +32,8 @@ export class UserPage {
             name: "Teste",
             email: "teste@teste.com",
             gender: "male",
-            status: "active"
+            status: "active",
+            cpf: "222.222.222-22"
         };
         this.service.postUser(novoUser)
         .subscribe((u) => 

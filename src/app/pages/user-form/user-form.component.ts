@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, Validators } from "@angular/forms";
 import { UserService } from "../../services/user.service";
 import { User } from "../../model/user";
 import { ActivatedRoute } from "@angular/router";
+import { validateCPF, validateDate } from "../../components/validators/validadores";
 
 @Component({
     selector: 'app-user-form',
@@ -23,8 +24,18 @@ export class UserFormPage {
             Validators.required, 
             Validators.email
         ])],
-        gender: ['']
-    });
+        gender: [''],
+        cpf: ['', Validators.compose([
+            Validators.required,
+            validateCPF()
+        ])],
+        birthDate: [''],
+        actualDate: ['']
+    },
+    {
+        validators: [validateDate()]
+    }
+    );
 
     ngOnInit() {
         const id = this.activateRoute.snapshot.paramMap.get('id');
@@ -66,12 +77,17 @@ export class UserFormPage {
             name: form.value.name!,
             email: form.value.email!,
             gender: form.value.gender!,
+            cpf: form.value.cpf!,
             // dados fora do form, mock
-            status: ''
+            status: '',
         };
     }
 
-    isError(control: 'name' | 'email' | 'gender', validator: string) {
+    isError(control: 'name' | 'email' | 'gender' | 'cpf', validator: string) {
         return this.userForm.controls[control].getError(validator) ? true : false;
+    }
+
+    isFormError(validator: string) {
+        return this.userForm.getError(validator) ? true : false;
     }
 } 

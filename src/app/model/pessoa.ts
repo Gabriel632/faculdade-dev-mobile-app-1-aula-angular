@@ -1,4 +1,5 @@
 export interface Pessoa {
     nome: string,
-    idade: number
+    idade: number,
+    cpf: string
 }

@@ -3,5 +3,6 @@ export interface User {
     name: string,
     email: string,
     gender: string,
-    status: string
+    status: string,
+    cpf: string
 }

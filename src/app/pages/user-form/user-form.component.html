@@ -7,6 +7,12 @@
     <p class="error" *ngIf="isError('email','email')">
         E-mail é inválido
     </p>
+    <p class="error" *ngIf="isError('cpf','validateCPF')">
+        CPF é inválido
+    </p>
+    <p class="error" *ngIf="isFormError('dateRange')">
+        Range data aniversário e atual inválido
+    </p>
 </div>
 
 <form [formGroup]="userForm" (ngSubmit)="salvar()">
@@ -41,6 +47,31 @@
                     </mat-form-field>
                 </td>
             </tr> 
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-label>CPF</mat-label>
+                        <input matInput placeholder="Ex. 222.222.222-22" name="cpf" formControlName="cpf" mask="000.000.000-00">                       
+                    </mat-form-field>                    
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>Data de aniversário</mat-label>
+                        <input matInput [matDatepicker]="picker1" name="birthDate" formControlName="birthDate">   
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>                    
+                    </mat-form-field>                    
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-label>Data atual</mat-label>
+                        <input matInput [matDatepicker]="picker2" name="actualDate" formControlName="actualDate">  
+                        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>                      
+                    </mat-form-field>                    
+                </td>
+            </tr>
         </tbody>               
     </table>
     <button mat-raised-button color="primary" type="submit">Salvar</button>

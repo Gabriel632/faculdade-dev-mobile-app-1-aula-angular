@@ -19,6 +19,9 @@ import { PessoaAddPage } from "../../pages/pessoa-add/pessoa-add-page.component"
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { UserFormPage } from "../../pages/user-form/user-form.component";
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { provideNativeDateAdapter } from "@angular/material/core";
 
 @NgModule({
     declarations: [
@@ -35,7 +38,9 @@ import { UserFormPage } from "../../pages/user-form/user-form.component";
     ],
     providers: [
         PessoaService,
-        UserService        
+        UserService,
+        provideNgxMask(),
+        provideNativeDateAdapter()       
     ],
     imports: [
         RouterModule
@@ -51,6 +56,9 @@ import { UserFormPage } from "../../pages/user-form/user-form.component";
         ,MatInputModule
         ,MatSelectModule  
         ,ReactiveFormsModule
+        ,NgxMaskDirective
+        ,NgxMaskPipe
+        ,MatDatepickerModule
     ],
     exports: [
         HeaderComponent 

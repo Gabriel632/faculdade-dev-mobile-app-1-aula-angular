@@ -13,6 +13,22 @@ export class ClientListPage {
 
     premiumClient = false;
     
+    // start data
+    clientes :Client[] = [
+        {
+            id: 1,
+            nome: 'Amélia',
+            descricao: 'Criança',
+            idade: 20
+        },
+        {
+            id: 2,
+            nome: 'Laputa',
+            descricao: 'Cidade',
+            idade: 2000
+        }
+    ];
+
     // Dados para input em classe filha
     clientToForm: Client = {
         id: 0,
@@ -29,22 +45,6 @@ export class ClientListPage {
         descricao: '',
         idade: 0
     };
-
-    // start data
-    clientes :Client[] = [
-        {
-            id: 1,
-            nome: 'Amélia',
-            descricao: 'Criança',
-            idade: 20
-        },
-        {
-            id: 2,
-            nome: 'Laputa',
-            descricao: 'Cidade',
-            idade: 2000
-        }
-    ];
 
     openClientFormToAdd(value: boolean) {
         this.openClientForm = value;

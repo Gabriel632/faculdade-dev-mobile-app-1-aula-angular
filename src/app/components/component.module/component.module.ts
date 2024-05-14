@@ -23,6 +23,9 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from "@angular/material/core";
 import { ClientFormPage } from "../../pages/client-form/client-form-page.component";
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalComponent } from "../modal.component/modal.component";
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
     declarations: [
@@ -36,7 +39,8 @@ import { ClientFormPage } from "../../pages/client-form/client-form-page.compone
         UserPage,
         PessoaAddPage,
         UserFormPage,
-        ClientFormPage
+        ClientFormPage,
+        ModalComponent
     ],
     providers: [
         PessoaService,
@@ -61,6 +65,8 @@ import { ClientFormPage } from "../../pages/client-form/client-form-page.compone
         ,NgxMaskDirective
         ,NgxMaskPipe
         ,MatDatepickerModule
+        ,MatDialogModule
+        ,MatTableModule
     ],
     exports: [
         HeaderComponent 
@@ -76,6 +82,7 @@ import { ClientFormPage } from "../../pages/client-form/client-form-page.compone
         ,PessoaAddPage
         ,UserFormPage
         ,ClientFormPage
+        ,ModalComponent
     ]
 })  
 export class ComponentModule {

@@ -6,7 +6,6 @@
 <button (click)="enviarDados()">Enviar dados</button>
 
 <br/>
-
 <h4>Exemplo de Pipe</h4>
 
 <p>Data: {{data | date}}</p>
@@ -16,3 +15,43 @@
 
 <p>Pipe personalizado: {{nome | appuppercase}}</p>
 
+<br/>
+<h4>Exemplo de Componentes Angular Material - Modal</h4>
+
+<p>
+    Modal:
+    <button mat-raised-button (click)="openDialog()">Abrir Modal</button>    
+</p>
+<p>Retorno de dado vindo do modal: {{animal}}</p>
+
+<br/>
+<h4>Exemplo de Componentes Angular Material - Tabela</h4>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Weight </th>
+      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

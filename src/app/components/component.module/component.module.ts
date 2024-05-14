@@ -22,6 +22,7 @@ import { UserFormPage } from "../../pages/user-form/user-form.component";
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from "ngx-mask";
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from "@angular/material/core";
+import { ClientFormPage } from "../../pages/client-form/client-form-page.component";
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { provideNativeDateAdapter } from "@angular/material/core";
         PessoaListPage,
         UserPage,
         PessoaAddPage,
-        UserFormPage
+        UserFormPage,
+        ClientFormPage
     ],
     providers: [
         PessoaService,
@@ -73,6 +75,7 @@ import { provideNativeDateAdapter } from "@angular/material/core";
         ,UserPage
         ,PessoaAddPage
         ,UserFormPage
+        ,ClientFormPage
     ]
 })  
 export class ComponentModule {

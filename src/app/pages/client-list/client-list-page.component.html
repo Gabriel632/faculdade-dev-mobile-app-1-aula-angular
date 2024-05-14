@@ -1,13 +1,37 @@
 <h4>Home de Clientes</h4>
 
-<p>Listagem de clientes cadastrados</p>
+<p>
+    Listagem de clientes cadastrados
+    <button mat-stroked-button color="primary" (click)="openClientFormToAdd(true)">Adicionar cliente</button>
+</p>
+
 <ul *ngFor="let cliente of clientes">
-    <li>{{cliente.id}} - {{cliente.nome}} - {{cliente.descricao}}</li>
+    <li>
+        {{cliente.id}} - {{cliente.nome}} - {{cliente.descricao}} - {{cliente.idade}}
+        ---
+        <button mat-button (click)="remover(cliente.id)">Remover cliente</button>
+    </li>
+    <li>
+        <button mat-stroked-button (click)="openClientFormToUpdate(cliente)">Atualizar dados cliente</button>
+    </li>
     <li>
         <a [routerLink]="['/client/details', cliente.id]">Ver detalhes clientes</a>
     </li>
 </ul>
 
+<router-outlet></router-outlet>
+<div *ngIf="openClientForm" >
+    <app-client-form 
+    [clientInput]="clientToForm"
+    (onClickVoltarParaListagem)="openClientForm = $event"
+    (onSalvarDados)="handleClientFormReturn($event)"
+    ></app-client-form>
+</div>
+
+<br>
+<button (click)="sayHello()">Diga Olá pelo service</button>
+
+<br>
 <div *ngIf="premiumClient; else naoPremium">
     <p>Você é um cliente premium! Parabéns!</p>
 </div>  
@@ -20,23 +44,6 @@
     <p>Torne-se um cliente PREMIUM!</p>
 </ng-template>
 
-<h4>Cadastro de cliente novo cliente na lista</h4>
-<label>Nome: </label>
-<input [(ngModel)]="client.nome" />
-<br/>
-<label>Descrição: </label>
-<input [(ngModel)]="client.descricao" />
-<br/>
-<label>ID: </label>
-<input [(ngModel)]="client.id" />
-<br/>
-<button (click)="adicionar()">Adicionar cliente</button>
-
-<router-outlet></router-outlet>
-
-<br/>
-<br/>
-<button (click)="sayHello()">Diga Olá pelo service</button>
 <br>
 <a routerLink="">Voltar para Home</a>
 <br>

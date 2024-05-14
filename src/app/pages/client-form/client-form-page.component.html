@@ -1,0 +1,49 @@
+<h4 *ngIf="clientInput.id === 0">Formulário de Cadastro de novo cliente</h4>
+<h4 *ngIf="clientInput.id !== 0">Formulário de Atualização do cliente {{clientInput.nome}}</h4>
+
+<form [formGroup]="clientForm" (ngSubmit)="salvarDados()" id="client-form">
+    <div class="client-form-fields">
+        <mat-form-field class="form-field">
+            <mat-label>ID</mat-label>
+            <input matInput readonly type="number" name="id" formControlName="id" [value]="clientInput.id">
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Nome</mat-label>
+            <input matInput type="text" name="nome" formControlName="nome" required placeholder="Ex. João" [value]="clientInput.nome">
+        </mat-form-field>
+    </div>
+
+    <div class="client-form-fields">
+        <mat-form-field class="form-field">
+            <mat-label>Descrição</mat-label>
+            <input matInput type="text" name="descricao" formControlName="descricao" required placeholder="Ex. Jogador de tênis" [value]="clientInput.descricao">
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Idade</mat-label>
+            <input matInput type="number" name="idade" formControlName="idade" required placeholder="Ex. 30" [value]="clientInput.idade">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <button mat-raised-button color="primary" type="submit" class="form-btn">Salvar dados</button>
+        <button mat-raised-button color="primary" type="button" class="form-btn" (click)="clickVoltarParaListagem()">Voltar para listagem</button>
+    </div>    
+</form>
+
+<!-- 
+<label>Nome: </label>
+<input [(ngModel)]="client.nome" />
+<br/>
+<label>Descrição: </label>
+<input [(ngModel)]="client.descricao" />
+<br/>
+<label>ID: </label>
+<input [(ngModel)]="client.id" />
+<br/>
+<button mat-stroked-button color="primary" (click)="salvarDados()">Salvar dados</button>
+<br/>
+<br/>
+<a routerLink="">Voltar para Home</a>
+<br> -->
